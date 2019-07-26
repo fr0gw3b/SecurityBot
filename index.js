@@ -75,7 +75,7 @@ function checkAllMembers() {
 			if(date[1] == (1 + newdate.getMonth()).toString().padStart(2, '0')){
 				if(date[0] == newdate.getDate().toString().padStart(2, '0')){
 					member.user.send("Vous avez été bannis car votre compte à été créer récemment");
-					sendEmbed(`${member.user} a été bannis de la street car son compte a été créé récemment`, "danger", guildId, channelLogsId)
+					sendEmbed(`${member.user} a été bannis car son compte a été créé récemment`, "danger", guildId, channelLogsId)
 					setTimeout(function() {
 					    thestreet.member(member).ban("Compte créer avant les normes réspectés du serveur.");
 					}, 1000);
@@ -86,7 +86,7 @@ function checkAllMembers() {
 				  	i += 1;
 				  	if(date[0] == newdate.getDate().toString().padStart(2, '0') - i){
 		            	member.user.send("Vous avez été bannis car votre compte à été créer récemment");
-		            	sendEmbed(`${member.user} a été bannis de la street car son compte a été créé récemment`, "danger", guildId, channelLogsId)
+		            	sendEmbed(`${member.user} a été bannis car son compte a été créé récemment`, "danger", guildId, channelLogsId)
 		            	setTimeout(function() {
 		                	thestreet.member(member).ban("Compte créer avant les normes réspectés du serveur.");
 		            	}, 1000);
