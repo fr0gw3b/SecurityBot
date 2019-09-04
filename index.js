@@ -114,39 +114,7 @@ bot.on('ready', () => {
 bot.on('guildMemberAdd', (member) => {
 
 	if(member.user.bot) return;
-
-	const guild = member.guild;
-	const datecreated = member.user.createdAt;
-
-	const date = getFormattedDate(datecreated).split("/");
-
-	const newdate = new Date();
-	
-	if(date[2] != newdate.getFullYear()) return;
-	if(date[1] != (1 + newdate.getMonth()).toString().padStart(2, '0')) return;
-	if(date[1] == (1 + newdate.getMonth()).toString().padStart(2, '0')){
-		if(date[0] == newdate.getDate().toString().padStart(2, '0')){
-			member.user.send("Vous avez été bannis car votre compte à été créer récemment");
-			sendEmbed(`${member.user} a été bannis car son compte a été créé récemment`, "danger", guildId, channelLogsId)
-			setTimeout(function() {
-			    guild.member(member).kick("Compte créer avant les normes réspectés du serveur.");
-			}, 1000);
-		}
-
-        var i = 0;
-		do {
-		  	i += 1;
-		  	if(date[0] == newdate.getDate().toString().padStart(2, '0') - i){
-            	member.user.send("Vous avez été bannis car votre compte à été créer récemment");
-            	sendEmbed(`${member.user} a été bannis car son compte a été créé récemment`, "danger", guildId, channelLogsId)
-            	setTimeout(function() {
-                	guild.member(member).kick("Compte créer avant les normes réspectés du serveur.");
-            	}, 1000);
-            	break;
-        	}
-		} while (i < dayaccountminimum);
-
-	}
+	checkAllMembers();
 
 })
 
