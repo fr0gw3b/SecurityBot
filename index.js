@@ -143,7 +143,6 @@ function checkMembers(users) {
 
 bot.on('ready', () => {
 	console.log(colors.info('-----------------------------------------------------'))
-	console.log('--> '.green + 'Bot by Niroxy'.cyan)
 	console.log(colors.green('--> Connecter avec succès'))
 	console.log(colors.info('-----------------------------------------------------'))
 	var interval = setInterval(function () {
